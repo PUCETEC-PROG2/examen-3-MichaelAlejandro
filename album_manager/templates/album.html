@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Albunes{% endblock title %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for album in albums %}
+    <div class="col">
+      <div class="card">
+        <img src="{{ album.picture.url }}" alt="" >
+        <div class="card-body">
+            <h5 class="card-title">{{ album }}</h5>
+            <p class="card-text">Año de Lanzamiento: {{ album.year_release }}</p>
+            <a href="{% url 'album_manager:album_info' album.id %}" class="btn btn-primary">
+                <i class="fa-solid fa-eye"></i>
+            </a>
+            <a href="{% url 'album_manager:edit_album' album.id %}" class="btn btn-primary">
+                <i class="fa-solid fa-pencil"></i>
+            </a>
+            <a href="{% url 'album_manager:delete_album' album.id %}" class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

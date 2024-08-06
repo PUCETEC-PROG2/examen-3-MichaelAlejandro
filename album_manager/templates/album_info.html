@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ album }}{% endblock title %}
+{% block content %}
+<dl class="row">
+  
+    <dt class="col-sm-3">Información</dt>
+    <dd class="col-sm-9"></dd>
+    
+    <dt class="col-sm-3">Imagen Album</dt>
+    <dd class="col-sm-9"><img src="{{ album.picture.url }}" alt="" width="150 px" height="150 px"></dd>
+
+    <dt class="col-sm-3">Titulo del Album</dt>
+    <dd class="col-sm-9">{{ album.tittle }}</dd>
+
+    <dt class="col-sm-3">Año de Lanzamiento</dt>
+    <dd class="col-sm-9">{{ album.year_release }}</dd>
+
+    <dt class="col-sm-3">Genero</dt>
+    <dd class="col-sm-9">{{ album.gender }}</dd>
+
+    <dt class="col-sm-3">Artista Asociado</dt>
+    <dd class="col-sm-9">{{ album.artist }}</dd>
+  
+</dl>
+
+{% endblock content %}

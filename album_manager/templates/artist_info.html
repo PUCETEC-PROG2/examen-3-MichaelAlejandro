@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{{ artist }}{% endblock title %}
+{% block content %}
+<dl class="row">
+  
+    <dt class="col-sm-3">Información</dt>
+    <dd class="col-sm-9"></dd>
+
+    <dt class="col-sm-3">Imagen</dt>
+    <dd class="col-sm-9"><img src="{{ artist.picture.url }}" alt="" width="150 px" height="150 px"></dd>
+
+    <dt class="col-sm-3">Nombre del Artista</dt>
+    <dd class="col-sm-9">{{ artist.name }}</dd>
+
+    <dt class="col-sm-3">Lugar de Origen</dt>
+    <dd class="col-sm-9">{{ artist.place }}</dd>
+</dl>
+
+{% endblock content %}

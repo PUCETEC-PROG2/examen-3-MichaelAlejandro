@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Artistas{% endblock title %}
+{% block content %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for artist in artists %}
+    <div class="col">
+      <div class="card">
+        <img src="{{ artist.picture.url }}" alt="" >
+        <div class="card-body">
+            <h5 class="card-title">{{ artist }}</h5>
+            <p class="card-text">Lugar de Origen: {{ artist.place }}</p>
+            <a href="artist/{{artist.pk }}" class="btn btn-primary">
+                <i class="fa-solid fa-eye"></i>
+            </a>
+            <a href="edit_artist/{{artist.pk }}" class="btn btn-primary">
+                <i class="fa-solid fa-pencil"></i>
+            </a>
+            <a href="delete_artist/{{artist.pk }}" class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock content %}
